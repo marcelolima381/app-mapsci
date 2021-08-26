@@ -1,10 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Button, Col, Container, Row} from "react-bootstrap";
 import {useMutation} from "react-query";
 import ApiService from "../../common/services";
 
 function HomePage() {
-	const [state, setState] = useState();
 	const mutation = useMutation((lattesZIP) => ApiService.postLattes(lattesZIP), {
 		onSuccess: () => {
 			console.info('sucesso')
