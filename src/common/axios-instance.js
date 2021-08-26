@@ -7,4 +7,6 @@ instance.interceptors.response.use(
   (error) => Promise.reject(error)
 );
 
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+
 export default instance;
