@@ -9,6 +9,7 @@ const ApiService = {
 
 		return instance.post(`${APIUrl}/fields/`, formData, {
 			headers: {
+				"Access-Control-Allow-Origin": "*",
 				"Content-Type": "multipart/form-data"
 			},
 			params: {
