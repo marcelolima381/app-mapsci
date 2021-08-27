@@ -7,15 +7,7 @@ const ApiService = {
 		let formData = new FormData();
 		formData.append("file", lattesZIP);
 
-		return instance.post(`${APIUrl}/fields/`, formData, {
-			headers: {
-				"Access-Control-Allow-Origin": "*",
-				"Content-Type": "multipart/form-data"
-			},
-			params: {
-				format: 'json'
-			}
-		})
+		return instance.post(`${APIUrl}/fields/`, formData)
 	}
 };
 
