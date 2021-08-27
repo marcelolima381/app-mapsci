@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo} from 'react';
+import React, {useMemo} from 'react';
 import {Button, Col, Container, Row} from "react-bootstrap";
 import {useMutation} from "react-query";
 import ApiService from "../../common/services";
@@ -14,8 +14,6 @@ function HomePage() {
 			console.error('erro')
 		},
 	});
-	const lattesZIP = 123;
-
 
 	const {
 		getRootProps,
