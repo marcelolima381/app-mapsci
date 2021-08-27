@@ -75,7 +75,7 @@ function HomePage() {
 						{mutation.isSuccess && mutation.data && mutation.data.map((field, index) => (
 							<React.Fragment key={index}>
 								<span><b>{field[0]}</b></span>
-								<ProgressBar variant={pickColor(field[1]*100)} now={field[1]*100} />
+								<ProgressBar variant={pickColor(field[1]*100)} now={field[1]*100} label={`${(field[1]*100).toFixed(2)}%`} />
 							</React.Fragment>
 						))}
 					</div>
