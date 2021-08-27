@@ -4,7 +4,13 @@ const APIUrl = "https://research-fields.herokuapp.com";
 
 const ApiService = {
 	postLattes: (lattesZIP) => {
-		return instance.post(`${APIUrl}/fields`, lattesZIP, {
+		let formData = new FormData();
+		formData.append("file", lattesZIP);
+
+		return instance.post(`${APIUrl}/fields/`, formData, {
+			headers: {
+				"Content-Type": "multipart/form-data"
+			},
 			params: {
 				format: 'json'
 			}
