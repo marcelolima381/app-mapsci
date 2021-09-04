@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import {Button, Col, Container, ProgressBar, Row, Spinner} from "react-bootstrap";
+import {Button, Col, Container, ListGroup, ProgressBar, Row, Spinner} from "react-bootstrap";
 import {useMutation} from "react-query";
 import ApiService from "../../common/services";
 import {useDropzone} from 'react-dropzone';
@@ -53,7 +53,7 @@ function HomePage() {
 			</Row>
 			<Row>
 				<Col className="container">
-					<section >
+					<section>
 						<div {...getRootProps({style})}>
 							<input {...getInputProps()} />
 							<p>Submeta seu currículo Lattes aqui</p>
@@ -72,12 +72,28 @@ function HomePage() {
 								<Spinner animation="border" variant="primary" />
 							</React.Fragment>
 						}
-						{mutation.isSuccess && mutation.data && mutation.data.map((field, index) => (
-							<React.Fragment key={index}>
-								<span><b>{field[0]}</b></span>
-								<ProgressBar variant={pickColor(field[1]*100)} now={field[1]*100} label={`${(field[1]*100).toFixed(2)}%`} />
-							</React.Fragment>
-						))}
+						{mutation.isSuccess && mutation.data && (
+							<div>
+								{mutation.data.predictions.map((field, index) => (
+									<React.Fragment key={index}>
+										<span><b>{field[0]}</b></span>
+										<ProgressBar variant={pickColor(field[1]*100)} now={field[1]*100} label={`${(field[1]*100).toFixed(2)}%`} />
+									</React.Fragment>
+								))}
+								<div className='mt-5'>
+									<h3>Researcher info</h3>
+									<ListGroup variant="flush">
+										<ListGroup.Item><b>Full name</b>: {mutation.data.researcher?.fullname}</ListGroup.Item>
+										<ListGroup.Item><b>Citation name</b>: {mutation.data.researcher?.citation_name}</ListGroup.Item>
+										<ListGroup.Item><b>Summary</b>: {mutation.data.researcher?.summary}</ListGroup.Item>
+										<ListGroup.Item><b>Institution</b>: {mutation.data.researcher?.institution}</ListGroup.Item>
+										<ListGroup.Item><b>Department</b>: {mutation.data.researcher?.department}</ListGroup.Item>
+										<ListGroup.Item><b>Unity</b>: {mutation.data.researcher?.unity}</ListGroup.Item>
+										<ListGroup.Item><b>Graduation</b>: {mutation.data.researcher?.graduation}</ListGroup.Item>
+									</ListGroup>
+								</div>
+							</div>
+						)}
 					</div>
 				</Col>
 			</Row>

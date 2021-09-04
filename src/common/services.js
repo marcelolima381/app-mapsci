@@ -1,6 +1,6 @@
 import instance from "./axios-instance";
 
-const APIUrl = "https://research-fields.herokuapp.com";
+const APIUrl = "https://api-mapsci.herokuapp.com";
 
 const ApiService = {
 	postLattes: (lattesZIP) => {
