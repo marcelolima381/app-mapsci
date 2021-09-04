@@ -83,13 +83,13 @@ function HomePage() {
 								<div className='mt-5'>
 									<h3>Researcher info</h3>
 									<ListGroup variant="flush">
-										<ListGroup.Item><b>Full name</b>: {mutation.data.researcher?.fullname}</ListGroup.Item>
-										<ListGroup.Item><b>Citation name</b>: {mutation.data.researcher?.citation_name}</ListGroup.Item>
-										<ListGroup.Item><b>Summary</b>: {mutation.data.researcher?.summary}</ListGroup.Item>
-										<ListGroup.Item><b>Institution</b>: {mutation.data.researcher?.institution}</ListGroup.Item>
-										<ListGroup.Item><b>Department</b>: {mutation.data.researcher?.department}</ListGroup.Item>
-										<ListGroup.Item><b>Unity</b>: {mutation.data.researcher?.unity}</ListGroup.Item>
-										<ListGroup.Item><b>Graduation</b>: {mutation.data.researcher?.graduation}</ListGroup.Item>
+										<ListGroup.Item><b>Nome completo</b>: {mutation.data.researcher?.fullname}</ListGroup.Item>
+										<ListGroup.Item><b>Nome de citação</b>: {mutation.data.researcher?.citation_name}</ListGroup.Item>
+										<ListGroup.Item><b>Resumo</b>: {mutation.data.researcher?.summary}</ListGroup.Item>
+										<ListGroup.Item><b>Instituição</b>: {mutation.data.researcher?.institution}</ListGroup.Item>
+										<ListGroup.Item><b>Órgão</b>: {mutation.data.researcher?.department}</ListGroup.Item>
+										<ListGroup.Item><b>Departamento</b>: {mutation.data.researcher?.unity}</ListGroup.Item>
+										<ListGroup.Item><b>Graduação</b>: {mutation.data.researcher?.graduation}</ListGroup.Item>
 									</ListGroup>
 								</div>
 							</div>
